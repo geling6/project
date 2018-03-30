@@ -1,5 +1,5 @@
 package com.geling.project;
 
-public class HelloWorld {
+public class Test {
 
 }
