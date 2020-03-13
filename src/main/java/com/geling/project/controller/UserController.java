@@ -1,8 +1,9 @@
 package com.geling.project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.geling.project.service.UserService;
@@ -14,19 +15,21 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value="", method=RequestMethod.GET)
+	@GetMapping(value="/cpu")
 	public String getUser(){
+		userService.getUser();
 		return "na wei";
 	}
 	
-	@RequestMapping(value="", method=RequestMethod.POST)
+	@GetMapping(value="/lock")
 	public String createUser(String name){
-		return "tong lei yan";
+		userService.test();
+		return "lock";
 	}
 	
-	@RequestMapping(value="", method=RequestMethod.PUT)
+	@PutMapping(value="")
 	public String updateUser(String user){
-		return "liang jing";
+		return "";
 	}
 
 }
